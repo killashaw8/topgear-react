@@ -24,7 +24,7 @@ class MemberService {
 
   public async getShowroom(): Promise<Member> {
     try{
-      const url = this.path + "/member/restaurant";
+      const url = this.path + "/member/showroom";
       const result = await axios.get(url);
       console.log("getRestaurant:", result);
 

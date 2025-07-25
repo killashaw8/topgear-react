@@ -14,10 +14,10 @@ import { useGlobals } from "./hooks/useGlobals";
 import { sweetErrorHandling, sweetTopSuccessAlert } from "../lib/sweetAlert";
 import { Messages } from "../lib/config";
 import { T } from "../lib/types/common";
-import "../css/app.css";
-import "../css/navbar.css"
-import "../css/footer.css"
 import AuthenticationModal from "./components/auth";
+import "../scss/app.scss";
+import "../scss/navbar.scss"
+import "../scss/footer.scss"
 
 
 
@@ -25,14 +25,12 @@ function App() {
   const location = useLocation();
   const {setAuthMember} = useGlobals();
   const {cartItems, onAdd, onRemove, onDelete, onDeleteAll,} = useBasket();
-  const [ signupOpen, setSignupOpen ] = useState<boolean>(false);
-  const [ loginOpen, setLoginOpen ] = useState<boolean>(false);
+  const [authMode, setAuthMode] = useState<"signup" | "login" | null>(null);
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
 
   /** HANDLERS **/
 
-  const handleSignupClose = () => setSignupOpen(false);
-  const handleLoginClose =() => setLoginOpen(false);
+  const handleAuthClose = () => setAuthMode(null);
 
   const handleLogoutClick = (e: T) => {
     setAnchorEl(e.currentTarget);
@@ -58,8 +56,8 @@ function App() {
     onRemove,
     onDelete,
     onDeleteAll,
-    setSignupOpen,
-    setLoginOpen,
+    openSignup: () => setAuthMode("signup"),
+    openLogin: () => setAuthMode("login"),
     anchorEl,
     handleLogoutClick,
     handleCloseLogout,
@@ -87,10 +85,8 @@ function App() {
       <Footer />
 
       <AuthenticationModal
-        signupOpen={signupOpen}
-        loginOpen={loginOpen}
-        handleSignupClose={handleSignupClose}
-        handleLoginClose={handleLoginClose}
+        authMode={authMode}
+        handleClose={handleAuthClose}
       />
     </>
   );

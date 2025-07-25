@@ -27,7 +27,7 @@ export default function TrendProducts() {
     <div className={"trend-products-frame"}>
       <Container>
         <Stack className={"trend-section"}>
-          <Box className={"category-title"}>Popular Cars</Box>
+          <Box className={"category-title"}>Trend Cars</Box>
           <Stack className={"cards-frame"}>
             {trendProducts.length !== 0 ? (
               trendProducts.map((product: Product) => {

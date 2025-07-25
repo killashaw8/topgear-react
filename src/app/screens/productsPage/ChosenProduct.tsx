@@ -34,9 +34,9 @@ const chosenProductRetriever = createSelector(
   (chosenProduct) => ({chosenProduct})
 );
 
-const restaurantRetriever = createSelector(
+const showroomRetriever = createSelector(
   retrieveShowroom, 
-  (restaurant) => ({restaurant})
+  (showroom) => ({showroom})
 );
 
 interface ChosenProductProps {
@@ -48,7 +48,7 @@ export default function ChosenProduct(props: ChosenProductProps) {
   const productId = useParams().productId as string;
   const { setShowroom, setChosenProduct } = actionDispatch(useDispatch());
   const { chosenProduct } = useSelector(chosenProductRetriever);
-  const { restaurant } = useSelector(restaurantRetriever);
+  const { showroom } = useSelector(showroomRetriever);
 
 
   useEffect(() => {
@@ -95,8 +95,8 @@ export default function ChosenProduct(props: ChosenProductProps) {
         <Stack className={"chosen-product-info"}>
           <Box className={"info-box"}>
             <strong className={"product-name"}>{chosenProduct.productName}</strong>
-            <span className={"resto-name"}>{restaurant?.memberNick}</span>
-            <span className={"resto-name"}>{restaurant?.memberPhone}</span>
+            <span className={"resto-name"}>{showroom?.memberNick}</span>
+            <span className={"resto-name"}>{showroom?.memberPhone}</span>
             <Box className={"rating-box"}>
               <Rating name="half-rating" defaultValue={2.5} precision={0.5} />
               <div className={"evaluation-box"}>

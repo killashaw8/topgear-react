@@ -1,11 +1,11 @@
 import { Box, Button, Container, ListItemIcon, Menu, MenuItem, Stack } from "@mui/material";
 import { NavLink } from "react-router-dom";
-// import Basket from "./Basket";
 import { useEffect, useState } from "react";
 import { CartItem } from "../../../lib/types/search";
 import { useGlobals } from "../../hooks/useGlobals";
 import { serverApi } from "../../../lib/config";
 import { Logout } from "@mui/icons-material";
+import Basket from "./Basket";
 
 interface HomeNavbarProps {
   cartItems: CartItem[];
@@ -13,8 +13,8 @@ interface HomeNavbarProps {
   onRemove: (item: CartItem) => void;
   onDelete: (item: CartItem) => void;
   onDeleteAll: () => void;
-  setSignupOpen: (isOpen: boolean) => void;
-  setLoginOpen: (isOpen: boolean) => void;
+  openSignup: () => void;
+  openLogin: () => void;
   handleLogoutClick: (e: React.MouseEvent<HTMLElement>) => void;
   anchorEl: HTMLElement | null;
   handleCloseLogout: () => void;
@@ -28,8 +28,8 @@ export function HomeNavbar(props: HomeNavbarProps) {
     onRemove, 
     onDelete, 
     onDeleteAll,
-    setSignupOpen,
-    setLoginOpen,
+    openSignup,
+    openLogin,
     handleLogoutClick,
     anchorEl,
     handleCloseLogout,
@@ -50,7 +50,7 @@ export function HomeNavbar(props: HomeNavbarProps) {
       >
         <Box>
           <NavLink to="/">
-            <img className="brand-logo" src="/icons/topgear-logo.png"/>
+            <img className="brand-logo" src="/img/logo.png"/>
           </NavLink>
         </Box>
         <Stack className="links">
@@ -84,20 +84,20 @@ export function HomeNavbar(props: HomeNavbarProps) {
               </NavLink>
           </Box>
           
-          {/* <Basket 
+          <Basket 
             cartItems={cartItems}
             onAdd={onAdd}
             onRemove={onRemove}
             onDelete={onDelete}
             onDeleteAll={onDeleteAll}
-          /> */}
+          />
 
           {!authMember ? (
             <Box>
               <Button 
                 variant="contained" 
                 className="login-button"
-                onClick={() => setLoginOpen(true)}
+                onClick={openLogin}
               >
                 Login
               </Button>
@@ -175,16 +175,13 @@ export function HomeNavbar(props: HomeNavbarProps) {
               <Button 
                 variant={"contained"} 
                 className={"signup-button"}
-                onClick={() => setSignupOpen(true)}
+                onClick={openSignup}
                 >
                   SIGN UP
               </Button>
                 ) : null}
           </Box>
         </Stack>
-          <Box className={"logo-frame"}>
-            <div className={"logo-img"}></div>
-          </Box>
       </Stack>
     </Container>
   </div>;

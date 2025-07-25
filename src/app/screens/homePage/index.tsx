@@ -11,7 +11,7 @@ import ProductService from "../../services/ProductService";
 import { ProductCollection } from "../../../lib/enums/product.enum";
 import MemberService from "../../services/MemberService";
 import { Member } from "../../../lib/types/member";
-import "../../../css/home.css"
+import "../../../scss/home.scss"
 
 /** REDUX Slice & Selector **/
 const actionDispatch = (dispatch: Dispatch) => ({
@@ -30,7 +30,7 @@ export default function HomePage() {
     const product = new ProductService();
     product.getProducts({
       page: 1,
-      limit: 4,
+      limit: 3,
       order: "productViews",
       productCollection: ProductCollection.BUDGET,
     })
@@ -42,7 +42,7 @@ export default function HomePage() {
     product 
       .getProducts({
         page: 1,
-        limit: 4,
+        limit: 3,
         order: "createdAt",
         productCollection: ProductCollection.LUXURY,
       })

@@ -34,14 +34,12 @@ const ModalImg = styled.img`
 `;
 
 interface AuthenticationModalProps {
-  signupOpen: boolean;
-  loginOpen: boolean;
-  handleSignupClose: () => void;
-  handleLoginClose: () => void;
+  authMode: "signup" | "login" | null;
+  handleClose: () => void;
 }
 
 export default function AuthenticationModal(props: AuthenticationModalProps) {
-  const { signupOpen, loginOpen, handleSignupClose, handleLoginClose } = props;
+  const { authMode, handleClose } = props;
   const [ memberNick, setMemberNick ] = useState<string>("");
   const [ memberPhone, setMemberPhone ] = useState<string>("");
   const [ memberPassword, setMemberPassword ] = useState<string>("");
@@ -55,8 +53,9 @@ export default function AuthenticationModal(props: AuthenticationModalProps) {
   const handlePassword = (e: T) => setMemberPassword(e.target.value);
 
   const handlePasswordKeyDown = async (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter" && signupOpen) await handleSignupRequest();
-    if (e.key === "Enter" && loginOpen) await handleLoginRequest();
+    if (e.key !== "Enter") return;
+    if (authMode === "signup") await handleSignupRequest();
+    else if (authMode === "login") await handleLoginRequest();
   };
 
   const handleSignupRequest = async () => {
@@ -74,10 +73,10 @@ export default function AuthenticationModal(props: AuthenticationModalProps) {
       const result = await member.signup(signupInput);
 
       setAuthMember(result);
-      handleSignupClose();
+      handleClose();
     } catch (err) {
       console.log(err);
-      handleSignupClose();
+      handleClose();
       sweetErrorHandling(err).then();
     }
   }
@@ -96,10 +95,10 @@ export default function AuthenticationModal(props: AuthenticationModalProps) {
       const result = await member.login(loginInput);
 
       setAuthMember(result);
-      handleLoginClose();
+      handleClose();
     } catch (err) {
       console.log(err);
-      handleLoginClose();
+      handleClose();
       sweetErrorHandling(err).then();
     }
   }
@@ -110,13 +109,13 @@ export default function AuthenticationModal(props: AuthenticationModalProps) {
       <StyledModal
         aria-labelledby="signup-title"
         aria-describedby="signup-description"
-        open={signupOpen}
-        onClose={handleSignupClose}
+        open={authMode === "signup"} 
+        onClose={handleClose}
         closeAfterTransition
-        BackdropComponent={Backdrop}
-        BackdropProps={{ timeout: 500 }}
+        slots={{ backdrop: Backdrop }}
+        slotProps={{ backdrop: { timeout: 500 } }}
       >
-        <Fade in={signupOpen}>
+        <Fade in={authMode === "signup"}>
           <StyledPaperStack direction="row" sx={{ width: "800px" }}>
             <ModalImg src="/img/auth.webp" alt="camera" />
             <Stack sx={{ ml: 6, alignItems: "center" }}>
@@ -161,13 +160,13 @@ export default function AuthenticationModal(props: AuthenticationModalProps) {
       <StyledModal
         aria-labelledby="login-title"
         aria-describedby="login-description"
-        open={loginOpen}
-        onClose={handleLoginClose}
+        open={authMode === "login"} 
+        onClose={handleClose}
         closeAfterTransition
-        BackdropComponent={Backdrop}
-        BackdropProps={{ timeout: 500 }}
+        slots={{ backdrop: Backdrop }}
+        slotProps={{ backdrop: { timeout: 500 } }}
       >
-        <Fade in={loginOpen}>
+        <Fade in={authMode === "login"}>
           <StyledPaperStack direction="row" sx={{ width: "700px" }}>
             <ModalImg src="/img/auth.webp" alt="camera" />
             <Stack sx={{ ml: 6, mt: 3, alignItems: "center" }}>

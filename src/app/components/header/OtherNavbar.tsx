@@ -12,8 +12,8 @@ interface OtherNavbarProps {
   onRemove: (item: CartItem) => void;
   onDelete: (item: CartItem) => void;
   onDeleteAll: () => void;
-  setSignupOpen: (isOpen: boolean) => void;
-  setLoginOpen: (isOpen: boolean) => void;
+  openSignup: () => void;
+  openLogin: () => void;
   handleLogoutClick: (e: React.MouseEvent<HTMLElement>) => void;
   anchorEl: HTMLElement | null;
   handleCloseLogout: () => void;
@@ -27,8 +27,8 @@ export function OtherNavbar(props: OtherNavbarProps) {
     onRemove, 
     onDelete, 
     onDeleteAll, 
-    setSignupOpen,
-    setLoginOpen,
+    openSignup,
+    openLogin,
     handleLogoutClick,
     anchorEl,
     handleCloseLogout,
@@ -44,7 +44,7 @@ export function OtherNavbar(props: OtherNavbarProps) {
     >
       <Box>
         <NavLink to="/">
-          <img className="brand-logo" src="/icons/burak.svg"/>
+          <img className="brand-logo" src="/img/logo.png"/>
         </NavLink>
       </Box>
       <Stack className="links">
@@ -103,7 +103,7 @@ export function OtherNavbar(props: OtherNavbarProps) {
             <Button 
               variant="contained" 
               className="login-button"
-              onClick={() => setLoginOpen(true)}
+              onClick={openLogin}
             >
               Login
             </Button>

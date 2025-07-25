@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { CartItem } from "../../../lib/types/search";
 import ChosenProduct from "./ChosenProduct";
-import "../../../css/products.css";
+import "../../../scss/products.scss";
 import Products from "./Products";
 
 interface ProductsPageProps {

@@ -19,11 +19,16 @@ import { ProductCollection } from "../../../lib/enums/product.enum";
 import ProductService from "../../services/ProductService";
 import { useNavigate } from "react-router-dom";
 import { CartItem } from "../../../lib/types/search";
+import styled from 'styled-components';
+import Radio from "../../components/ui/Radio";
+
 
 /** REDUX SLICE & SELECTOR */
 const actionDispatch = (dispatch: Dispatch) => ({
   setProducts: (data: Product[]) => dispatch(setProducts(data))
 });
+
+
 
 const productsRetriever = createSelector(
   retrieveProducts, 
@@ -41,7 +46,7 @@ export default function Products(props: ProductsProps) {
   
   const [productSearch, setProductSearch] = useState<ProductInquiry>({
     page: 1,
-    limit: 8,
+    limit: 6,
     order: "createdAt",
     productCollection: ProductCollection.LUXURY,
     search: "",
@@ -125,71 +130,75 @@ export default function Products(props: ProductsProps) {
           </Stack>
           <Stack className={"dishes-filter-section"}>
             <Stack className={"dishes-filter-box"}>
-              <Button
-                variant={"contained"}
-                color={
-                  productSearch.order === "createdAt" ? "primary" : "secondary" 
-                }
-                className={"order"}
-                onClick={() => searchOrderHandler("createdAt")}
-              >
-                New
-              </Button>
-              <Button
-                variant={"contained"}
-                color={
-                  productSearch.order === "productPrice" ? "primary" : "secondary" 
-                }
-                className={"order"}
-                onClick={() => searchOrderHandler("productPrice")}
-              >
-                Price
-              </Button>
-              <Button
-                variant={"contained"}
-                color={
-                  productSearch.order === "productViews" ? "primary" : "secondary" 
-                }
-                className={"order"}
-                onClick={() => searchOrderHandler("productViews")}
-              >
-                Views
-              </Button>
+              <Radio
+                options={[
+                  { label: "New", value: "createdAt" },
+                  { label: "Price", value: "productPrice" },
+                  { label: "Views", value: "productViews" },
+                ]}
+                value={productSearch.order}
+                onChange={searchOrderHandler}
+              />
             </Stack>
           </Stack>
           <Stack className={"product-main-section"}>
             <Stack className={"list-category-section"}>
               <Stack className={"product-category"}>
                 <div className={"category-main"}>
-                  <Button 
-                    variant={"contained"} 
-                    color={
-                      productSearch.productCollection === ProductCollection.BUDGET 
-                      ? "primary"
-                      : "secondary"
-                    }
+                  <Button
+                    variant="contained"
+                    sx={{
+                      backgroundColor:
+                        productSearch.productCollection === ProductCollection.BUDGET
+                          ? '#ffcc00'
+                          : '#dddddd',
+                      color: '#000',
+                      '&:hover': {
+                        backgroundColor:
+                          productSearch.productCollection === ProductCollection.BUDGET
+                            ? '#e6b800'
+                            : '#cccccc'
+                      }
+                    }}
                     onClick={() => searchCollectionHandler(ProductCollection.BUDGET)}
                   >
                     Budget
                   </Button>
-                  <Button 
-                    variant={"contained"} 
-                    color={
-                      productSearch.productCollection === ProductCollection.LUXURY 
-                      ? "primary"
-                      : "secondary"
-                    }
+                  <Button
+                    variant="contained"
+                    sx={{
+                      backgroundColor:
+                        productSearch.productCollection === ProductCollection.LUXURY
+                          ? '#ffcc00'
+                          : '#dddddd',
+                      color: '#000',
+                      '&:hover': {
+                        backgroundColor:
+                          productSearch.productCollection === ProductCollection.LUXURY
+                            ? '#e6b800'
+                            : '#cccccc'
+                      }
+                    }}
                     onClick={() => searchCollectionHandler(ProductCollection.LUXURY)}
                   >
                     Luxury
                   </Button>
-                  <Button 
-                    variant={"contained"} 
-                    color={
-                      productSearch.productCollection === ProductCollection.SPORT 
-                      ? "primary"
-                      : "secondary"
-                    }
+                  <Button
+                    variant="contained"
+                    sx={{
+                      backgroundColor:
+                        productSearch.productCollection === ProductCollection.SPORT
+                          ? '#ffcc00'
+                          : '#dddddd',
+                      color: '#000',
+                      border: '5px black',
+                      '&:hover': {
+                        backgroundColor:
+                          productSearch.productCollection === ProductCollection.SPORT
+                            ? '#e6b800'
+                            : '#cccccc'
+                      }
+                    }}
                     onClick={() => searchCollectionHandler(ProductCollection.SPORT)}
                   >
                     Sport
@@ -279,20 +288,6 @@ export default function Products(props: ProductsProps) {
           </Stack>
         </Stack>
       </Container>
-      <div className={"address"}>
-        <Container>
-          <Stack className={"address-area"}>
-            <Box className={"title"}>Our address</Box>
-            <iframe
-            style={{ marginTop: "60px" }}
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1498.1941163531258!2d69.22756351997904!3d41.3221705122861!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b004c0b0e5b%3A0x143556f918fcf0a!2sRaykhon%20Milliy%20Taomlar!5e0!3m2!1sen!2skr!4v1745369452131!5m2!1sen!2skr"
-            width="1320"
-            height="500"
-            referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </Stack>
-        </Container>
-      </div>
     </div>
   );
-}
+};

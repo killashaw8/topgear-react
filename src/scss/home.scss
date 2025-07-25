@@ -1,0 +1,415 @@
+.homepage {
+  width: 100%;
+  height: auto;
+  background: #ebb433;
+
+/* POPULAR CARS */
+
+  .popular-dishes-frame {
+    width: 100%;
+    height: 450px;
+    display: flex;
+    background: #ebb433;
+
+    .popular-section {
+      margin-top: 45px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .category-title {
+        text-align: center;
+        font-family: Roboto Serif;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        letter-spacing: 1.44px;
+        color: rgb(0, 0, 0);
+      }
+
+      .cards-frame {
+        width: 100%;
+        margin-top: 45px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+
+    .cards-frame .card {
+      height: 300px;
+      width: 630px;
+      margin-right: 7px;
+      cursor: pointer;
+      border: 1px solid black;
+
+      .card-cover {
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0) 200px), linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0) 300px);
+      }
+    }
+
+    .no-data {
+      width: 100%;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-transform: capitalize;
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 30px;
+      line-height: 34px;
+      color: #010203;
+    }
+  }
+
+/* TREND CARS */
+
+  .trend-products-frame {
+    width: 100%;
+    height: 450px;
+    display: flex;
+    background: #ebb433;
+
+    .trend-section {
+      margin-top: 45px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .category-title {
+        text-align: center;
+        font-family: Roboto Serif;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        letter-spacing: 1.44px;
+        color: rgb(0, 0, 0);
+      }
+
+      .cards-frame {
+        width: 100%;
+        margin-top: 45px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+
+    .cards-frame .card {
+      height: 300px;
+      width: 630px;
+      margin-right: 7px;
+      cursor: pointer;
+      border: 1px solid black;
+
+      .card-cover {
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0) 200px), linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0) 300px);
+      }
+    }
+
+    .no-data {
+      width: 100%;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-transform: capitalize;
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 30px;
+      line-height: 34px;
+      color: #010203;
+    }
+  }
+
+/* ADVERTISEMENT */
+
+  .ads-restaurant-frame {
+    width: 100%;
+    height: 693px;
+    display: flex;
+    overflow: hidden;
+    transform: perspective(0px);
+    box-shadow: -3px 0px 20px 14px #34343480;
+
+    .ads-video {
+      width: 100%;
+      background: #0c0e12;
+      display: flex;
+      box-shadow: 0px -8px 90px rgb(215, 215, 255);
+      transform: scale(1.5);
+      overflow: hidden;
+    }
+  }
+
+/* ACTIVE USERS */  
+
+  .active-users-frame {
+    width: 100%;
+    height: 550px;
+    background: #f8f8ff;
+    display: flex;
+
+    .main {
+      margin-top: 93px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .category-title {
+        font-family: "Dancing Script";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 43px;
+      }
+
+      .cards-frame {
+        width: 100%;
+        margin: 56px 2px 2px 2px;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .card {
+        height: 305px;
+        width: 273px;
+        cursor: pointer;
+      }
+    }
+
+    .user-detail {
+      width: auto;
+      height: 49%;
+      display: flex;
+      justify-content: center;
+      margin-top: -12px;
+      border-top: 1px solid;
+      border-color: #f8f8ff;
+      background-color: #fafbfb;
+
+      .info {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .title {
+        width: 65px;
+        font-weight: 500;
+      }
+    }
+
+    .no-data {
+      width: 100%;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-transform: capitalize;
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 30px;
+      line-height: 34px;
+      color: #010203;
+    }
+  }
+
+/* EVENTS */
+
+  .events-frame {
+    width: 100%;
+    height: 745px;
+    background: #f8f8ff;
+    display: flex;
+
+    .category-title {
+      font-family: "Dancing Script";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 43px;
+      padding-top: 20px;
+    }
+
+    .events-main {
+      position: relative;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .events-text {
+        width: auto;
+        height: 70px;
+        margin-bottom: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .prev-next-frame {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 250px;
+        margin: 40px 0 40px 0;
+        height: 25px;
+      }
+    }
+
+    .dot-frame-pagination {
+      position: relative;
+      width: auto;
+      display: flex;
+    }
+
+    .events-main .events-info {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .events-info .events-info-frame {
+      position: relative;
+      width: 500px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .events-img {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      border-radius: 10px;
+      background-size: cover;
+    }
+
+    .events-desc {
+      position: absolute;
+      margin-bottom: 7px;
+      padding: 10px;
+      display: flex;
+      width: 90%;
+      height: auto;
+      bottom: 5px;
+      background: #f8f8ff;
+      box-shadow: 0px 40px 30px rgba(25, 25, 46, 0.04);
+      border-radius: 8px;
+
+      .events-bott {
+        width: 97%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        .bott-left {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+
+    .bott-left .event-title-speaker {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .event-title-speaker .event-organizator {
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 20px;
+        margin-right: 10px;
+      }
+    }
+
+    .event-organizator .spec-text-author {
+      font-family: "GT Walsheim Pro";
+      font-style: normal;
+      line-height: 34px;
+      color: #140342;
+    }
+
+    .bott-left {
+      .text-desc {
+        margin-top: 10px;
+        font-family: "GT Walsheim Pro";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 26px;
+        color: #4f547b;
+      }
+
+      .bott-info {
+        margin-top: 10px;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: row;
+        width: 100%;
+        height: 16px;
+      }
+    }
+
+    .bott-info .bott-info-main {
+      margin-left: 10px;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      width: auto;
+      height: 100%;
+      font-family: "GT Walsheim Pro";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 16px;
+      color: #4f547b;
+
+      img {
+        margin-right: 10px;
+      }
+    }
+
+    .swiper-wrapper {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .swiper-pagination-bullet {
+      margin-right: 5px;
+      width: 8px;
+      height: 8px;
+      text-align: center;
+      opacity: 1;
+      background: #f8f8ff;
+      border-radius: 50%;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: #343434;
+      border-radius: 50%;
+    }
+  }
+}
