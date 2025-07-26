@@ -8,8 +8,14 @@ import { OrderStatus } from "../../../lib/enums/order.enum";
 import OrderService from "../../services/OrderService";
 import { Box, Container, Stack } from "@mui/material";
 import TabContext from "@mui/lab/TabContext";
-import Tabs from "@mui/joy/Tabs";
-import Tab from "@mui/joy/Tab";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import { serverApi } from "../../../lib/config";
+import { useDispatch } from "react-redux";
+import PausedOrders from "./PausedOrders";
+import ProcessOrders from "./ProcessOrders";
+import FinishedOrders from "./FinishedOrders";
+import "../../../scss/order.scss";
 
 
 /** REDUX SLICE & SELECTOR */

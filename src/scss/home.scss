@@ -134,6 +134,7 @@
     height: 693px;
     display: flex;
     overflow: hidden;
+    margin-top: 10px;
     transform: perspective(0px);
     box-shadow: -3px 0px 20px 14px #34343480;
 
@@ -147,12 +148,12 @@
     }
   }
 
-/* ACTIVE USERS */  
+/* TOP USERS */  
 
   .active-users-frame {
     width: 100%;
     height: 550px;
-    background: #f8f8ff;
+    background: #ebb433;
     display: flex;
 
     .main {
