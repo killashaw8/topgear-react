@@ -362,3 +362,122 @@
     flex-direction: column;
   }
 }
+
+@media only screen and (max-width: 767px) {
+  .home-navbar {
+    height: auto;
+    background-position: center;
+
+    .navbar-container {
+      margin-top: 20px;
+      height: auto;
+
+      .menu {
+        height: auto;
+        flex-direction: column;
+        gap: 12px;
+
+        .brand-logo {
+          height: 44px;
+          width: 100px;
+        }
+
+        .links {
+          min-width: 0;
+          width: 100%;
+          flex-wrap: wrap;
+          gap: 10px;
+          justify-content: center;
+        }
+
+        .user-avatar {
+          width: 40px;
+          height: 40px;
+        }
+      }
+    }
+
+    .navbar-container {
+      .header-frame {
+        margin-top: 40px;
+        height: auto;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+
+        .detail {
+          width: 100%;
+          align-items: center;
+
+          .head-main-txt {
+            width: 100%;
+            height: auto;
+            font-size: 30px;
+          }
+
+          .wel-txt {
+            width: 100%;
+            height: auto;
+            font-size: 22px;
+          }
+
+          .service-txt {
+            width: auto;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  .home-navbar .detail {
+    .signup {
+      margin-top: 30px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .signup-button {
+      width: 90%;
+      height: 52px;
+    }
+  }
+
+  .other-navbar {
+    height: auto;
+    background-position: center;
+
+    .navbar-container {
+      margin-top: 20px;
+
+      .menu {
+        height: auto;
+        flex-direction: column;
+        gap: 12px;
+
+        .brand-logo {
+          height: 44px;
+          width: 100px;
+        }
+
+        .links {
+          min-width: 0;
+          width: 100%;
+          flex-wrap: wrap;
+          gap: 10px;
+          justify-content: center;
+        }
+
+        .user-avatar {
+          width: 40px;
+          height: 40px;
+        }
+      }
+    }
+  }
+
+  .basket-frame {
+    width: 100%;
+  }
+}

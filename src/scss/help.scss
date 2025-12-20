@@ -185,3 +185,38 @@
     }
   }
 }
+
+@media only screen and (max-width: 767px) {
+  .help-page {
+    .help-container {
+      margin-top: 30px;
+      margin-bottom: 30px;
+      flex-direction: column;
+    }
+
+    .help-menu {
+      height: auto;
+      padding-bottom: 10px;
+
+      .table-list {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+      }
+    }
+
+    .css-1gsv261 {
+      width: 100%;
+    }
+
+    .help-main-content {
+      height: auto;
+      min-height: 400px;
+    }
+
+    .admin-letter-box {
+      padding: 24px;
+    }
+  }
+}

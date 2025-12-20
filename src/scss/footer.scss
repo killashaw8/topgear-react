@@ -94,3 +94,30 @@
     transform: scaleX(1);
   }
 }
+
+@media only screen and (max-width: 767px) {
+  .foot-desc-txt,
+  .copyright-txt {
+    text-align: center;
+  }
+
+  .sns-context {
+    width: 100%;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .foot-category-title,
+  .foot-category-link {
+    text-align: center;
+  }
+
+  .find-us {
+    flex-direction: column;
+    align-items: center;
+
+    div {
+      margin-left: 0;
+    }
+  }
+}

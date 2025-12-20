@@ -630,3 +630,158 @@
     }
   }
 }
+
+@media only screen and (max-width: 767px) {
+  .products-page {
+    .products {
+      .top-text {
+        margin-top: 30px;
+        justify-content: center;
+
+        p {
+          margin-left: 0;
+          font-size: 26px;
+        }
+      }
+
+      .dishes-filter-section {
+        width: 100%;
+        margin-top: 20px;
+        margin-left: 0;
+        align-items: center;
+      }
+
+      .single-search-form {
+        width: 90%;
+        margin-left: 0;
+        gap: 8px;
+      }
+
+      .single-search-input {
+        width: 100%;
+        margin: 0;
+      }
+
+      .single-button-search {
+        width: 100%;
+      }
+    }
+
+    .products {
+      .product-main-section {
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+        flex-direction: column;
+      }
+
+      .product-wrapper {
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+        justify-content: center;
+      }
+
+      .product-card {
+        width: 90%;
+        height: auto;
+        margin-right: 0;
+      }
+
+      .product-img {
+        width: 100%;
+        height: 220px;
+      }
+
+      .shop-btn {
+        left: 45%;
+      }
+
+      .product-category {
+        position: relative;
+        width: 100%;
+        align-items: center;
+
+        .category-main {
+          transform: none;
+          top: auto;
+          left: auto;
+        }
+      }
+
+      .brands-logo {
+        height: auto;
+        padding-bottom: 40px;
+
+        .title {
+          font-size: 26px;
+          margin-top: 40px;
+        }
+      }
+
+      .family-brands-logo {
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 30px;
+
+        .logos {
+          width: 90%;
+          height: auto;
+          margin-left: 0;
+          margin-right: 0;
+          padding: 20px 0;
+        }
+
+        .logo {
+          width: 90%;
+          height: auto;
+        }
+      }
+
+      .address .title {
+        font-size: 26px;
+      }
+    }
+
+    .chosen-product {
+      .product-container {
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 30px;
+        margin-bottom: 60px;
+      }
+
+      .chosen-product-slider {
+        width: 100%;
+        height: auto;
+
+        .swiper-area {
+          height: 320px;
+
+          .slider-image {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+
+      .chosen-product-info {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        margin-left: 0;
+      }
+
+      .info-box {
+        .product-name {
+          font-size: 24px;
+        }
+
+        .product-desc {
+          height: auto;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

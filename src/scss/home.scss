@@ -414,3 +414,108 @@
     }
   }
 }
+
+@media only screen and (max-width: 767px) {
+  .homepage {
+    .popular-dishes-frame,
+    .trend-products-frame {
+      height: auto;
+      flex-direction: column;
+      padding-bottom: 30px;
+
+      .popular-section,
+      .trend-section {
+        margin-top: 30px;
+
+        .category-title {
+          font-size: 24px;
+        }
+
+        .cards-frame {
+          flex-direction: column;
+          gap: 16px;
+          align-items: center;
+        }
+      }
+
+      .cards-frame .card {
+        width: 90%;
+        height: 240px;
+        margin-right: 0;
+      }
+    }
+
+    .ads-restaurant-frame {
+      height: auto;
+      margin-top: 0;
+
+      .ads-video {
+        transform: scale(1);
+      }
+    }
+
+    .active-users-frame {
+      height: auto;
+      flex-direction: column;
+      padding-bottom: 40px;
+
+      .main {
+        margin-top: 40px;
+
+        .category-title {
+          font-size: 26px;
+        }
+
+        .cards-frame {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          align-items: center;
+        }
+
+        .card {
+          width: 90%;
+          height: auto;
+        }
+      }
+
+      .user-detail {
+        width: 100%;
+        margin-top: 10px;
+      }
+    }
+
+    .events-frame {
+      height: auto;
+      padding-bottom: 30px;
+
+      .category-title {
+        font-size: 26px;
+      }
+
+      .events-main {
+        .prev-next-frame {
+          margin: 20px 0;
+        }
+      }
+
+      .events-main .events-info {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .events-info .events-info-frame {
+        width: 100%;
+      }
+
+      .events-img {
+        height: 240px;
+      }
+
+      .events-desc {
+        position: relative;
+        bottom: auto;
+      }
+    }
+  }
+}

@@ -339,3 +339,65 @@
     }
   }
 }
+
+@media only screen and (max-width: 767px) {
+  .user-page {
+    .my-page-frame {
+      flex-direction: column;
+      padding: 30px 0;
+    }
+  }
+
+  .my-page-frame .my-page-left {
+    width: 100%;
+  }
+
+  .my-page-frame .my-page-right {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  .user-page {
+    .order-info-box {
+      padding: 16px;
+
+      .settings-btn {
+        right: 8%;
+      }
+
+      .order-user-avatar {
+        width: 120px;
+        height: 120px;
+      }
+
+      .user-media-box {
+        width: 100%;
+        justify-content: space-around;
+      }
+    }
+
+    .settings {
+      width: 100%;
+
+      .input-frame {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .short-input {
+        width: 100%;
+      }
+
+      .spec-textarea {
+        height: 140px;
+      }
+
+      .member-media-frame {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+    }
+  }
+}
