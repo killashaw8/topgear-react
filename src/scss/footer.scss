@@ -28,11 +28,9 @@
 
 .foot-category-link {
   margin-top: 20px;
-  height: 170px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 170px;
+  gap: 10px;
   font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
@@ -78,6 +76,30 @@
   font-size: 16px;
   line-height: 34px;
   color: #ff9902;
+
+  .copyright-brand {
+    font-weight: 700;
+    color: #c5c8c9;
+  }
+
+  .copyright-owner {
+    color: #ff9902;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 200ms ease-in-out;
+  }
+
+  .copyright-owner:hover {
+    border-color: #ff9902;
+  }
+}
+
+.footer-main {
+  width: 100%;
+}
+
+.footer-links {
+  width: 100%;
 }
 
 .foot-category-title {
@@ -96,6 +118,40 @@
 }
 
 @media only screen and (max-width: 767px) {
+  .footer-main {
+    flex-direction: column !important;
+    align-items: center;
+    gap: 28px;
+    margin-top: 40px !important;
+  }
+
+  .footer-brand {
+    width: 100% !important;
+    align-items: center;
+  }
+
+  .footer-links {
+    flex-direction: column !important;
+    align-items: center;
+    gap: 24px !important;
+    margin-left: 0 !important;
+  }
+
+  .footer-column {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .footer-separator {
+    margin-top: 40px !important;
+  }
+
+  .footer-copyright {
+    text-align: center;
+    padding: 0 16px;
+  }
+
   .foot-desc-txt,
   .copyright-txt {
     text-align: center;

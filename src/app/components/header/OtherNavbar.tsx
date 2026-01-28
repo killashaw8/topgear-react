@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import { Box, Button, Container, ListItemIcon, Menu, MenuItem, Stack } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import Basket from "./Basket";
@@ -36,8 +37,20 @@ export function OtherNavbar(props: OtherNavbarProps) {
   } = props;
   
   const {authMember} = useGlobals();
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  return <div className="other-navbar">
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return <div className={`other-navbar ${isScrolled ? "is-scrolled" : ""}`}>
   <Container className="navbar-container">
     <Stack 
       className="menu"

@@ -633,37 +633,58 @@
 
 @media only screen and (max-width: 767px) {
   .products-page {
+    min-height: 100vh;
+    padding-bottom: 40px;
+
     .products {
       .top-text {
-        margin-top: 30px;
+        margin-top: 24px;
         justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 12px;
+        height: auto;
 
         p {
           margin-left: 0;
           font-size: 26px;
+          text-align: center;
         }
       }
 
       .dishes-filter-section {
         width: 100%;
-        margin-top: 20px;
+        margin-top: 16px;
         margin-left: 0;
         align-items: center;
+        padding: 0 16px;
+
+        .dishes-filter-box {
+          width: 100%;
+          justify-content: center;
+          gap: 12px;
+          flex-wrap: wrap;
+        }
       }
 
       .single-search-form {
-        width: 90%;
+        width: 100%;
         margin-left: 0;
         gap: 8px;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0 16px;
       }
 
       .single-search-input {
         width: 100%;
         margin: 0;
+        height: 40px;
       }
 
       .single-button-search {
         width: 100%;
+        height: 40px;
       }
     }
 
@@ -671,7 +692,7 @@
       .product-main-section {
         width: 100%;
         height: auto;
-        margin-top: 20px;
+        margin-top: 16px;
         flex-direction: column;
       }
 
@@ -680,21 +701,23 @@
         height: auto;
         margin-left: 0;
         justify-content: center;
+        padding: 0 10px;
       }
 
       .product-card {
-        width: 90%;
+        width: 100%;
         height: auto;
         margin-right: 0;
       }
 
       .product-img {
         width: 100%;
-        height: 220px;
+        height: 210px;
       }
 
       .shop-btn {
-        left: 45%;
+        left: 50%;
+        transform: translateX(-50%);
       }
 
       .product-category {
@@ -706,6 +729,8 @@
           transform: none;
           top: auto;
           left: auto;
+          flex-wrap: wrap;
+          justify-content: center;
         }
       }
 

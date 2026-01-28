@@ -198,7 +198,8 @@
       height: auto;
       padding-bottom: 10px;
 
-      .table-list {
+      .table-list,
+      .table_list {
         width: 100%;
         flex-wrap: wrap;
         gap: 10px;
@@ -206,8 +207,20 @@
       }
     }
 
-    .css-1gsv261 {
-      width: 100%;
+    .MuiTabs-root {
+      width: 100% !important;
+    }
+
+    .MuiTabs-flexContainer {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .MuiTab-root {
+      min-width: auto;
+      padding: 6px 12px;
+      font-size: 13px;
     }
 
     .help-main-content {

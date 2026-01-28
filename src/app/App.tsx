@@ -80,7 +80,7 @@ function App() {
         <Route path="/orders" element={<OrdersPage />} />
         <Route path="/member-page" element={<UserPage />} />
         <Route path="/help" element={<HelpPage />} />
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<HomePage openSignup={() => setAuthMode("signup")} />} />
       </Routes>
       <Footer />
 

@@ -13,7 +13,6 @@ interface HomeNavbarProps {
   onRemove: (item: CartItem) => void;
   onDelete: (item: CartItem) => void;
   onDeleteAll: () => void;
-  openSignup: () => void;
   openLogin: () => void;
   handleLogoutClick: (e: React.MouseEvent<HTMLElement>) => void;
   anchorEl: HTMLElement | null;
@@ -28,7 +27,6 @@ export function HomeNavbar(props: HomeNavbarProps) {
     onRemove, 
     onDelete, 
     onDeleteAll,
-    openSignup,
     openLogin,
     handleLogoutClick,
     anchorEl,
@@ -37,13 +35,24 @@ export function HomeNavbar(props: HomeNavbarProps) {
   } = props;
 
   const {authMember} = useGlobals();
-  
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   
   
   /** HANDLERS **/
 
 
-  return <div className="home-navbar">
+  return <div className={`home-navbar ${isScrolled ? "is-scrolled" : ""}`}>
     <Container className="navbar-container">
       <Stack 
         className="menu"
@@ -157,30 +166,6 @@ export function HomeNavbar(props: HomeNavbarProps) {
           </MenuItem>
         </Menu>  
 
-        </Stack>
-      </Stack>
-      <Stack className={"header-frame"}>
-        <Stack className={"detail"}>
-          <Box className={"head-main-txt"}>
-            The best car showroom in the town
-          </Box>
-          <Box className={"wel-txt"}>
-            Your trust our pride!
-          </Box>
-          <Box className={"service-txt"}>
-            Rental service coming soon...
-          </Box>
-          <Box className={"signup"}>
-            {!authMember ? (
-              <Button 
-                variant={"contained"} 
-                className={"signup-button"}
-                onClick={openSignup}
-                >
-                  SIGN UP
-              </Button>
-                ) : null}
-          </Box>
         </Stack>
       </Stack>
     </Container>

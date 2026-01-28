@@ -12,6 +12,7 @@ import { ProductCollection } from "../../../lib/enums/product.enum";
 import MemberService from "../../services/MemberService";
 import { Member } from "../../../lib/types/member";
 import "../../../scss/home.scss"
+import Header from "./Header";
 
 /** REDUX Slice & Selector **/
 const actionDispatch = (dispatch: Dispatch) => ({
@@ -21,7 +22,12 @@ const actionDispatch = (dispatch: Dispatch) => ({
 }); 
 
 
-export default function HomePage() {
+interface HomePageProps {
+  openSignup: () => void;
+}
+
+export default function HomePage(props: HomePageProps) {
+  const { openSignup } = props;
   
   const { setTrendProducts, setPopularProducts, setTopUsers } = actionDispatch(useDispatch());
   
@@ -61,6 +67,7 @@ export default function HomePage() {
 
   return (
     <div className={"homepage"}>
+      <Header openSignup={openSignup} />
       <TrendProducts />
       <PopularProducts />
       <Advertisement />

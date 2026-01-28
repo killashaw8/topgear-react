@@ -17,7 +17,7 @@ const StyledModal = styled(Modal)`
 `;
 
 const StyledPaperStack = styled(Stack)(({ theme }) => ({
-  backgroundColor: theme.palette.background.paper,
+  backgroundColor: "#ffffff",
   border: "2px solid #000",
   boxShadow: theme.shadows[5],
   padding: theme.spacing(2),
@@ -103,6 +103,10 @@ export default function AuthenticationModal(props: AuthenticationModalProps) {
     }
   }
 
+  const handleModalClose = (_event: object, reason: string) => {
+    if (reason === "backdropClick") handleClose();
+  };
+
   return (
     <div>
       {/* Signup Modal */}
@@ -110,10 +114,15 @@ export default function AuthenticationModal(props: AuthenticationModalProps) {
         aria-labelledby="signup-title"
         aria-describedby="signup-description"
         open={authMode === "signup"} 
-        onClose={handleClose}
+        onClose={handleModalClose}
         closeAfterTransition
         slots={{ backdrop: Backdrop }}
-        slotProps={{ backdrop: { timeout: 500 } }}
+        slotProps={{
+          backdrop: {
+            timeout: 500,
+            sx: { backgroundColor: "transparent" },
+          },
+        }}
       >
         <Fade in={authMode === "signup"}>
           <StyledPaperStack direction="row" sx={{ width: "800px" }}>
@@ -161,10 +170,15 @@ export default function AuthenticationModal(props: AuthenticationModalProps) {
         aria-labelledby="login-title"
         aria-describedby="login-description"
         open={authMode === "login"} 
-        onClose={handleClose}
+        onClose={handleModalClose}
         closeAfterTransition
         slots={{ backdrop: Backdrop }}
-        slotProps={{ backdrop: { timeout: 500 } }}
+        slotProps={{
+          backdrop: {
+            timeout: 500,
+            sx: { backgroundColor: "transparent" },
+          },
+        }}
       >
         <Fade in={authMode === "login"}>
           <StyledPaperStack direction="row" sx={{ width: "700px" }}>
