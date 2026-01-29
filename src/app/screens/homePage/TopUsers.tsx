@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 import { createSelector } from "reselect";
 import { serverApi } from "../../../lib/config";
 import { Member } from "../../../lib/types/member";
+import { useNavigate } from "react-router-dom";
 
 /** REDUX SLICE & SELECTOR */
 const topUsersRetriever = createSelector(
@@ -19,6 +20,11 @@ const topUsersRetriever = createSelector(
 
 export default function TopUsers() {
   const { topUsers } = useSelector(topUsersRetriever);
+  const navigate = useNavigate();
+
+  const handleCardClick = () => {
+    navigate("/member-page");
+  };
 
   return(
     <div className={"active-users-frame"}>
@@ -31,7 +37,20 @@ export default function TopUsers() {
                 topUsers.map((member: Member) => {
                   const imagePath = `${serverApi}/${member.memberImage}`;
                   return (
-                    <Card key={member._id} variant="outlined" className={"card"}>
+                    <Card
+                      key={member._id}
+                      variant="outlined"
+                      className={"card"}
+                      role="button"
+                      tabIndex={0}
+                      onClick={handleCardClick}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          handleCardClick();
+                        }
+                      }}
+                      sx={{ cursor: "pointer" }}
+                    >
                     <CardOverflow>
                       <AspectRatio ratio="1">
                         <img src={imagePath} alt=""/>

@@ -12,6 +12,7 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import Typography from "@mui/joy/Typography";
 import CardOverflow from "@mui/joy/CardOverflow";
 import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
+import { useNavigate } from "react-router-dom";
 
 /** REDUX Slice & Selector **/
 const popularProductsRetriever = createSelector(
@@ -21,6 +22,12 @@ const popularProductsRetriever = createSelector(
 
 export default function PopularProducts() {
   const { popularProducts } = useSelector(popularProductsRetriever);
+  const navigate = useNavigate();
+
+  const handleCardClick = (productId: string) => {
+    navigate(`/products/${productId}`);
+  };
+
   return (
     <div className="popular-dishes-frame">
       <Container>
@@ -32,7 +39,18 @@ export default function PopularProducts() {
                 const imagePath = `${serverApi}/${product.productImages[0]}`;
                 return (
                   <CssVarsProvider key={product._id}>
-                    <Card className={"card"}>
+                    <Card
+                      className={"card"}
+                      role="button"
+                      tabIndex={0}
+                      onClick={() => handleCardClick(product._id)}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          handleCardClick(product._id);
+                        }
+                      }}
+                      sx={{ cursor: "pointer" }}
+                    >
                       <CardCover>
                         <img src={imagePath} alt="" />
                       </CardCover>

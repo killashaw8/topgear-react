@@ -63,8 +63,8 @@ export default function Footer() {
               <Box>
                 <Box className={"foot-category-title"}>Contact</Box>
                 <Box className={"foot-category-link"}>
-                  <a href="mailto:medibridgeapp@gmail.com">
-                    Email: medibridgeapp@gmail.com
+                  <a href="mailto:iamhalimov@gmail.com">
+                    Email: iamhalimov@gmail.com
                   </a>
                   <a href="tel:010-5689-9698">
                     Phone: +82 (010) 5689-9698
@@ -87,8 +87,8 @@ export default function Footer() {
             target="_blank"
             rel="noreferrer"
           >
-            Rahimjon Halimov
-          </a>
+            Rahimjon Halimov 
+          </a> 
         </p>
       </Container>
     </Footers>
