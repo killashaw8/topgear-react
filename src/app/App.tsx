@@ -5,6 +5,7 @@ import { OtherNavbar } from "./components/header/OtherNavbar";
 import ProductsPage from "./screens/productsPage";
 import MemberService from "./services/MemberService";
 import UserPage from "./screens/userPage";
+import PublicUserPage from "./screens/userPage/PublicUserPage";
 import OrdersPage from "./screens/ordersPage";
 import HelpPage from "./screens/helpPage";
 import HomePage from "./screens/homePage";
@@ -79,6 +80,7 @@ function App() {
         <Route path="/products/*" element={<ProductsPage onAdd={onAdd} />} />
         <Route path="/orders" element={<OrdersPage />} />
         <Route path="/member-page" element={<UserPage />} />
+        <Route path="/users/:memberId" element={<PublicUserPage />} />
         <Route path="/help" element={<HelpPage />} />
         <Route path="/" element={<HomePage openSignup={() => setAuthMode("signup")} />} />
       </Routes>

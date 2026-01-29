@@ -26,6 +26,69 @@
   }
 }
 
+.public-user-page {
+  .my-page-frame {
+    justify-content: center;
+  }
+
+  .my-page-right {
+    width: 100%;
+    max-width: 420px;
+    margin-left: 0;
+  }
+}
+
+.public-user-name {
+  font-family: "Poppins";
+  font-weight: 700;
+  font-size: 24px;
+  color: #08090d;
+}
+
+.public-user-type {
+  font-family: "Poppins";
+  font-weight: 600;
+  font-size: 14px;
+  color: #9a9a9a;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.public-user-location {
+  color: #6f6f6f;
+  font-size: 14px;
+  font-family: "Poppins";
+}
+
+.public-user-location svg {
+  color: #6f6f6f;
+}
+
+.public-user-page {
+  .user-media-box {
+    margin-top: 4px;
+    justify-content: center;
+    gap: 18px;
+  }
+
+  .user-desc {
+    margin-top: 8px;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .public-user-page {
+    .my-page-frame {
+      padding: 30px 0;
+    }
+
+    .my-page-right {
+      max-width: 100%;
+    }
+  }
+}
+
 .my-page-frame .my-page-left {
   width: 70%;
   height: auto;
@@ -142,7 +205,8 @@
       width: 60%;
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: center;
+      gap: 18px;
     }
 
     .user-desc {

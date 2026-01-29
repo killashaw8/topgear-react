@@ -22,8 +22,8 @@ export default function TopUsers() {
   const { topUsers } = useSelector(topUsersRetriever);
   const navigate = useNavigate();
 
-  const handleCardClick = () => {
-    navigate("/member-page");
+  const handleCardClick = (member: Member) => {
+    navigate(`/users/${member._id}`, { state: { member } });
   };
 
   return(
@@ -43,10 +43,10 @@ export default function TopUsers() {
                       className={"card"}
                       role="button"
                       tabIndex={0}
-                      onClick={handleCardClick}
+                      onClick={() => handleCardClick(member)}
                       onKeyDown={(e) => {
                         if (e.key === "Enter" || e.key === " ") {
-                          handleCardClick();
+                          handleCardClick(member);
                         }
                       }}
                       sx={{ cursor: "pointer" }}

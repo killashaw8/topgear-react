@@ -2,7 +2,7 @@ import { Box, Container, Stack } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TelegramIcon from "@mui/icons-material/Telegram";
-import YouTubeIcon from "@mui/icons-material/YouTube";
+import TwitterIcon from "@mui/icons-material/Twitter";
 import { useGlobals } from "../../hooks/useGlobals";
 import { serverApi } from "../../../lib/config";
 import { MemberType } from "../../../lib/enums/member.enum";
@@ -64,7 +64,7 @@ export default function UserPage() {
                 <FacebookIcon />
                 <InstagramIcon />
                 <TelegramIcon />
-                <YouTubeIcon />
+                <TwitterIcon />
               </Box>
               <p className={"user-desc"}>{
                 authMember?.memberDesc
