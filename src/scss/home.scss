@@ -260,6 +260,8 @@
         height: 305px;
         width: 273px;
         cursor: pointer;
+        border: 1px solid #000000;
+
       }
     }
 
@@ -270,7 +272,7 @@
       justify-content: center;
       margin-top: -12px;
       border-top: 1px solid;
-      border-color: #f8f8ff;
+      border-color: #000000;
       background-color: #fafbfb;
 
       .info {

@@ -91,14 +91,13 @@ export function Settings() {
       <Box className={"member-media-frame"}>
         <img src={memberImage} className={"mb-image"} />
         <div className={"media-change-box"}>
-          <span>Upload image</span>
-          <p>JPG, JPEG, PNG formats only!</p>
           <div className={"up-del-box"}>
             <Button component="label" onChange={handleImageViewer}>
-              <CloudDownloadIcon />
+              <CloudDownloadIcon fontSize="large"/>
               <input type="file" hidden />
             </Button>
           </div>
+          <p>JPG, JPEG, PNG formats only!</p>
         </div>
       </Box>
       <Box className={"input-frame"}>
