@@ -9,7 +9,6 @@ git checkout master
 git pull origin master
 
 echo "🧩 Rebuilding and starting production..."
-npm i yarn -g
 yarn
 yarn run build
 pm2 start "yarn run start:prod" --name=TopGear-VITE

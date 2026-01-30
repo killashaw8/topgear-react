@@ -44,7 +44,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "start:prod": "vite preview --port 8009"
+    "start:prod": "serve -s dist -l 8009"
   },
   "eslintConfig": {
     "extends": [
