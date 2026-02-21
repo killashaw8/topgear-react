@@ -150,14 +150,20 @@ export default function Products(props: ProductsProps) {
                     sx={{
                       backgroundColor:
                         productSearch.productCollection === ProductCollection.BUDGET
-                          ? '#ffcc00'
-                          : '#dddddd',
-                      color: '#000',
+                          ? 'var(--accent)'
+                          : 'var(--surface)',
+                      color: 'var(--text)',
+                      border: '1px solid var(--border)',
+                      boxShadow:
+                        productSearch.productCollection === ProductCollection.BUDGET
+                          ? '0 0 14px rgba(59, 130, 246, 0.45)'
+                          : '0 0 8px rgba(59, 130, 246, 0.2)',
                       '&:hover': {
                         backgroundColor:
                           productSearch.productCollection === ProductCollection.BUDGET
-                            ? '#e6b800'
-                            : '#cccccc'
+                            ? 'var(--accent-hover)'
+                            : 'var(--surface-2)',
+                        boxShadow: '0 0 16px rgba(59, 130, 246, 0.5)',
                       }
                     }}
                     onClick={() => searchCollectionHandler(ProductCollection.BUDGET)}
@@ -169,14 +175,20 @@ export default function Products(props: ProductsProps) {
                     sx={{
                       backgroundColor:
                         productSearch.productCollection === ProductCollection.LUXURY
-                          ? '#ffcc00'
-                          : '#dddddd',
-                      color: '#000',
+                          ? 'var(--accent)'
+                          : 'var(--surface)',
+                      color: 'var(--text)',
+                      border: '1px solid var(--border)',
+                      boxShadow:
+                        productSearch.productCollection === ProductCollection.LUXURY
+                          ? '0 0 14px rgba(59, 130, 246, 0.45)'
+                          : '0 0 8px rgba(59, 130, 246, 0.2)',
                       '&:hover': {
                         backgroundColor:
                           productSearch.productCollection === ProductCollection.LUXURY
-                            ? '#e6b800'
-                            : '#cccccc'
+                            ? 'var(--accent-hover)'
+                            : 'var(--surface-2)',
+                        boxShadow: '0 0 16px rgba(59, 130, 246, 0.5)',
                       }
                     }}
                     onClick={() => searchCollectionHandler(ProductCollection.LUXURY)}
@@ -188,15 +200,20 @@ export default function Products(props: ProductsProps) {
                     sx={{
                       backgroundColor:
                         productSearch.productCollection === ProductCollection.SPORT
-                          ? '#ffcc00'
-                          : '#dddddd',
-                      color: '#000',
-                      border: '5px black',
+                          ? 'var(--accent)'
+                          : 'var(--surface)',
+                      color: 'var(--text)',
+                      border: '1px solid var(--border)',
+                      boxShadow:
+                        productSearch.productCollection === ProductCollection.SPORT
+                          ? '0 0 14px rgba(59, 130, 246, 0.45)'
+                          : '0 0 8px rgba(59, 130, 246, 0.2)',
                       '&:hover': {
                         backgroundColor:
                           productSearch.productCollection === ProductCollection.SPORT
-                            ? '#e6b800'
-                            : '#cccccc'
+                            ? 'var(--accent-hover)'
+                            : 'var(--surface-2)',
+                        boxShadow: '0 0 16px rgba(59, 130, 246, 0.5)',
                       }
                     }}
                     onClick={() => searchCollectionHandler(ProductCollection.SPORT)}
@@ -273,6 +290,19 @@ export default function Products(props: ProductsProps) {
                   ? productSearch.page + 1 
                   : productSearch.page}
               page={productSearch.page}
+              sx={{
+                "& .MuiPaginationItem-root": {
+                  color: "var(--accent)",
+                  borderColor: "var(--accent)",
+                },
+                "& .MuiPaginationItem-root.Mui-selected": {
+                  backgroundColor: "var(--accent)",
+                  color: "var(--text)",
+                },
+                "& .MuiPaginationItem-root.Mui-selected:hover": {
+                  backgroundColor: "var(--accent-hover)",
+                },
+              }}
               renderItem={(item) => (
                 <PaginationItem
                   components={{

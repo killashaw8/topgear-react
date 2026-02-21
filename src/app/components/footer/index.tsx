@@ -8,7 +8,8 @@ const Footers = styled.div`
   height: auto;
   padding-bottom: 40px;
   display: flex;
-  background: #343434;
+  background: var(--bg-2);
+  border-top: 1px solid var(--border);
   background-size: cover;
 
   @media only screen and (max-width: 767px) {
@@ -23,7 +24,7 @@ export default function Footer() {
         <Stack className="footer-main" flexDirection={"row"} sx={{ mt: "94px" }}>
           <Stack className="footer-brand" flexDirection={"column"} style={{ width: "340px" }}>
             <Box>
-              <img width={"100px"} src={"/img/logo.png"} />
+              <img className="footer-logo" src={"/img/logo.png"} />
             </Box>
             <Box className={"foot-desc-txt"}>
               Focused on innovation and customer satisfaction, <br/>
@@ -76,7 +77,7 @@ export default function Footer() {
         </Stack>
         <Stack
           className="footer-separator"
-          style={{ border: "1px solid #C5C8C9", width: "100%", opacity: "0.2" }}
+          style={{ border: "1px solid var(--border)", width: "100%", opacity: "0.8" }}
           sx={{ mt: "80px" }}
         ></Stack>
         <p className={"copyright-txt footer-copyright"}>

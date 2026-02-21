@@ -1,0 +1,77 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 150ms ease;
+
+  &--primary {
+    background: var(--accent);
+    color: var(--text);
+
+    &:hover {
+      background: var(--accent-hover);
+    }
+
+    &:active {
+      background: var(--accent-active);
+    }
+  }
+
+  &--secondary {
+    background: var(--surface);
+    border-color: var(--border);
+    color: var(--text);
+
+    &:hover {
+      background: var(--surface-2);
+    }
+  }
+
+  &--ghost {
+    background: transparent;
+    color: var(--text-2);
+
+    &:hover {
+      background: var(--surface);
+      color: var(--text);
+    }
+  }
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: 150ms ease;
+
+  &:hover {
+    background: var(--surface-2);
+    border-color: var(--accent);
+  }
+}
+
+.input {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.65rem 0.8rem;
+  color: var(--text);
+  outline: none;
+  transition: 150ms ease;
+
+  &::placeholder {
+    color: var(--text-muted);
+  }
+
+  &:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+  }
+}

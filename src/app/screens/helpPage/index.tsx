@@ -35,6 +35,17 @@ export default function HelpPage() {
                 onChange={handleChange}
                 aria-label="lab API tabs example"
                 className={"table_list"}
+                sx={{
+                  "& .MuiTab-root": {
+                    color: "var(--text)",
+                  },
+                  "& .MuiTab-root.Mui-selected": {
+                    color: "var(--accent)",
+                  },
+                  "& .MuiTabs-indicator": {
+                    backgroundColor: "var(--accent)",
+                  },
+                }}
               >
                 <Tab label="TERMS" value={"1"} />
                 <Tab label="FAQ" value={"2"} />

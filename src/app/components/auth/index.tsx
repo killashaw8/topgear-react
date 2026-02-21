@@ -17,8 +17,9 @@ const StyledModal = styled(Modal)`
 `;
 
 const StyledPaperStack = styled(Stack)(({ theme }) => ({
-  backgroundColor: "#ffffff",
-  border: "2px solid #000",
+  backgroundColor: "var(--surface)",
+  color: "var(--text)",
+  border: "1px solid var(--border)",
   boxShadow: theme.shadows[5],
   padding: theme.spacing(2),
 }));
@@ -28,7 +29,7 @@ const ModalImg = styled.img`
   width: 62%;
   height: 100%;
   border-radius: 10px;
-  background: #000;
+  background: var(--bg);
   margin-top: 9px;
   margin-left: 10px;
 `;

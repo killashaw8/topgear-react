@@ -1,14 +1,14 @@
 .homepage {
   width: 100%;
   height: auto;
-  background: #ebb433;
+  background: var(--bg);
 
 /* HEADER*/
 .home-header {
   width: 100%;
   height: 773px;
   display: flex;
-  background: url("/img/banner.webp");
+  background: url("/img/banner.png");
   background-size: cover;
 
     .header-container {
@@ -36,7 +36,7 @@
           font-weight: 500;
           line-height: normal;
           letter-spacing: -0.75px;
-          color: #f8f8ff;
+          color: var(--text);
         }
 
         .wel-txt {
@@ -48,7 +48,7 @@
           font-weight: 400;
           line-height: normal;
           letter-spacing: -0.54px;
-          color: #d7b686;
+          color: var(--text-2);
         }
 
         .service-txt {
@@ -61,7 +61,7 @@
           font-weight: 400;
           line-height: normal;
           letter-spacing: -0.3px;
-          color: #d5d5d5;
+          color: var(--text-muted);
         }
       }
     }
@@ -76,7 +76,7 @@
         height: 60px;
         border-radius: 4px;
         background: #1976d2;
-        color: #f8f8ff;
+        color: var(--text);
       }
     }
   }
@@ -88,7 +88,7 @@
     width: 100%;
     height: 450px;
     display: flex;
-    background: #ebb433;
+    background: var(--bg);
 
     .popular-section {
       margin-top: 45px;
@@ -104,7 +104,7 @@
         font-weight: 600;
         line-height: normal;
         letter-spacing: 1.44px;
-        color: rgb(0, 0, 0);
+        color: var(--text);
       }
 
       .cards-frame {
@@ -121,7 +121,7 @@
       width: 630px;
       margin-right: 7px;
       cursor: pointer;
-      border: 1px solid black;
+      border: 1px solid var(--border);
 
       .card-cover {
         background: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0) 200px), linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0) 300px);
@@ -140,7 +140,7 @@
       font-weight: 400;
       font-size: 30px;
       line-height: 34px;
-      color: #010203;
+      color: var(--text);
     }
   }
 
@@ -150,7 +150,7 @@
     width: 100%;
     height: 450px;
     display: flex;
-    background: #ebb433;
+    background: var(--bg);
 
     .trend-section {
       margin-top: 45px;
@@ -166,7 +166,7 @@
         font-weight: 600;
         line-height: normal;
         letter-spacing: 1.44px;
-        color: rgb(0, 0, 0);
+        color: var(--text);
       }
 
       .cards-frame {
@@ -183,7 +183,7 @@
       width: 630px;
       margin-right: 7px;
       cursor: pointer;
-      border: 1px solid black;
+      border: 1px solid var(--border);
 
       .card-cover {
         background: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0) 200px), linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0) 300px);
@@ -202,7 +202,7 @@
       font-weight: 400;
       font-size: 30px;
       line-height: 34px;
-      color: #010203;
+      color: var(--text);
     }
   }
 
@@ -221,7 +221,7 @@
       width: 100%;
       background: #0c0e12;
       display: flex;
-      box-shadow: 0px -8px 90px rgb(215, 215, 255);
+      box-shadow: 0px -8px 90px rgba(59, 130, 246, 0.55);
       transform: scale(1.5);
       overflow: hidden;
     }
@@ -232,7 +232,7 @@
   .active-users-frame {
     width: 100%;
     height: 550px;
-    background: #ebb433;
+    background: var(--bg);
     display: flex;
 
     .main {
@@ -247,6 +247,7 @@
         font-weight: 700;
         font-size: 36px;
         line-height: 43px;
+        color: var(--text);
       }
 
       .cards-frame {
@@ -260,7 +261,7 @@
         height: 305px;
         width: 273px;
         cursor: pointer;
-        border: 1px solid #000000;
+        border: 1px solid var(--border);
 
       }
     }
@@ -272,8 +273,8 @@
       justify-content: center;
       margin-top: -12px;
       border-top: 1px solid;
-      border-color: #000000;
-      background-color: #fafbfb;
+      border-color: var(--text);
+      background-color: var(--surface);
 
       .info {
         width: 100%;
@@ -301,7 +302,7 @@
       font-weight: 400;
       font-size: 30px;
       line-height: 34px;
-      color: #010203;
+      color: var(--text);
     }
   }
 
@@ -310,7 +311,7 @@
   .events-frame {
     width: 100%;
     height: 745px;
-    background: #f8f8ff;
+    background: var(--surface);
     display: flex;
 
     .category-title {
@@ -390,7 +391,7 @@
       width: 90%;
       height: auto;
       bottom: 5px;
-      background: #f8f8ff;
+      background: var(--surface);
       box-shadow: 0px 40px 30px rgba(25, 25, 46, 0.04);
       border-radius: 8px;
 
@@ -431,7 +432,7 @@
       font-family: "GT Walsheim Pro";
       font-style: normal;
       line-height: 34px;
-      color: #140342;
+      color: var(--text);
     }
 
     .bott-left {
@@ -442,7 +443,7 @@
         font-weight: 400;
         font-size: 17px;
         line-height: 26px;
-        color: #4f547b;
+        color: var(--text-2);
       }
 
       .bott-info {
@@ -467,7 +468,7 @@
       font-weight: 400;
       font-size: 14px;
       line-height: 16px;
-      color: #4f547b;
+      color: var(--text-2);
 
       img {
         margin-right: 10px;
@@ -485,7 +486,7 @@
       height: 8px;
       text-align: center;
       opacity: 1;
-      background: #f8f8ff;
+      background: var(--surface);
       border-radius: 50%;
     }
 

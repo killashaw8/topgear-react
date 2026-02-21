@@ -2,7 +2,7 @@
   width: 100%;
   height: auto;
   display: flex;
-  background: #f8f8ff;
+  background: var(--surface);
 
   .css-heg063-MuiTabs-flexContainer {
     flex-direction: column;
@@ -41,7 +41,7 @@
 .my-page-right {
   .public-user-card {
     max-width: 420px;
-    border: 1px solid #000000;
+    border: 1px solid var(--border);
   }
 }
 
@@ -49,7 +49,7 @@
   font-family: "Poppins";
   font-weight: 700;
   font-size: 24px;
-  color: #08090d;
+  color: var(--text);
 }
 
 .public-user-type {
@@ -109,12 +109,12 @@
     height: 70px;
     display: flex;
     justify-content: center;
-    border-bottom: 1px solid #f8f8ff;
+    border-bottom: 1px solid var(--border);
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 600;
     font-size: 45px;
-    color: #f8f8ff;
+    color: var(--text);
   }
 
   .menu-content, .write-content {
@@ -130,9 +130,9 @@
   .settings {
     .spec-input,
     .spec-textarea {
-      background: #ffffff;
+      background: var(--surface);
       box-shadow: none;
-      border: 1px solid #000000;
+      border: 1px solid var(--border);
       border-radius: 6px;
     }
   }
@@ -163,8 +163,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #f6f2ff;
-    box-shadow: 15px 14px 4px rgba(0, 0, 0, 0.25), inset -1px 0px 16px 13px rgb(24 23 112 / 20%);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.25);
     border-radius: 16px;
 
     .settings-btn {
@@ -207,7 +208,7 @@
       font-weight: 500;
       font-size: 28px;
       line-height: 36px;
-      color: #08090d;
+      color: var(--text);
     }
 
     .order-user-prof {
@@ -216,7 +217,7 @@
       font-weight: 500;
       font-size: 20px;
       line-height: 36px;
-      color: #a1a1a1;
+      color: var(--text-2);
     }
 
     .user-media-box {
@@ -238,7 +239,7 @@
       font-weight: 400;
       font-size: 16px;
       line-height: 24px;
-      color: #616164;
+      color: var(--text-muted);
     }
 
     .css-1e3kzd4-MuiButtonBase-root-MuiButton-root {
@@ -250,7 +251,7 @@
       font-weight: 600;
       font-size: 25px;
       line-height: 38px;
-      color: #f8f8ff;
+      color: var(--text);
     }
   }
 
@@ -266,7 +267,7 @@
       font-weight: 600;
       font-size: 25px;
       line-height: 38px;
-      color: #000000;
+      color: var(--text);
     }
   }
 
@@ -304,7 +305,7 @@
       font-weight: 400;
       font-size: 16px;
       line-height: 25px;
-      color: #f8f8ff;
+      color: var(--text);
     }
 
     .spec-input {
@@ -319,7 +320,7 @@
       font-weight: 400;
       font-size: 15px;
       line-height: 26px;
-      color: #4f547b;
+      color: var(--text-2);
     }
 
     .spec-textarea {
@@ -334,7 +335,7 @@
       font-weight: 400;
       font-size: 15px;
       line-height: 26px;
-      color: #4f547b;
+      color: var(--text-2);
     }
 
     .member-media-frame {
@@ -372,7 +373,7 @@
         font-weight: 400;
         font-size: 16px;
         line-height: 18px;
-        color: #140342;
+        color: var(--text);
       }
 
       p {
@@ -382,7 +383,7 @@
         font-weight: 400;
         font-size: 14px;
         line-height: 16px;
-        color: #4f547b;
+        color: var(--text-2);
       }
     }
 

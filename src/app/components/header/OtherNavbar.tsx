@@ -62,7 +62,7 @@ export function OtherNavbar(props: OtherNavbarProps) {
       </Box>
       <Stack className="links">
         <Box className={"hover-line"}>
-          <NavLink to="/">
+          <NavLink to="/" className={({ isActive }) => (isActive ? "underline" : "")}>
             Home
           </NavLink>
         </Box>
@@ -170,7 +170,7 @@ export function OtherNavbar(props: OtherNavbarProps) {
         >
           <MenuItem onClick={handleLogoutRequest}>
             <ListItemIcon>
-              <Logout fontSize="small" style={{ color: 'blue' }} />
+              <Logout fontSize="small" style={{ color: "var(--accent)" }} />
             </ListItemIcon>
             Logout
           </MenuItem>

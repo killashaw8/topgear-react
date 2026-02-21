@@ -64,31 +64,31 @@ export function HomeNavbar(props: HomeNavbarProps) {
         </Box>
         <Stack className="links">
           <Box className={"hover-line"}>
-            <NavLink to="/" className={"underline"}>
+            <NavLink to="/" className={({ isActive }) => (isActive ? "underline" : "")}>
               Home
             </NavLink>
           </Box>
           <Box className={"hover-line"}>
-            <NavLink to="/products" className={"underline"}>
+            <NavLink to="/products" className={({ isActive }) => (isActive ? "underline" : "")}>
               Products
             </NavLink>
           </Box>
           {authMember ? (
             <Box className={"hover-line"}>
-              <NavLink to="/orders" className={"underline"}>
+              <NavLink to="/orders" className={({ isActive }) => (isActive ? "underline" : "")}>
                 Orders
               </NavLink>
             </Box>
           ) : null}
           {authMember ? (
             <Box className={"hover-line"}>
-              <NavLink to="/member-page" className={"underline"}>
+              <NavLink to="/member-page" className={({ isActive }) => (isActive ? "underline" : "")}>
                 My Page
               </NavLink>
             </Box>
           ) : null}
           <Box className={"hover-line"}>
-              <NavLink to="/help" className={"underline"}>
+              <NavLink to="/help" className={({ isActive }) => (isActive ? "underline" : "")}>
                 Help
               </NavLink>
           </Box>
@@ -160,7 +160,7 @@ export function HomeNavbar(props: HomeNavbarProps) {
         >
           <MenuItem onClick={handleLogoutRequest}>
             <ListItemIcon>
-              <Logout fontSize="small" style={{ color: 'blue' }} />
+              <Logout fontSize="small" style={{ color: "var(--accent)" }} />
             </ListItemIcon>
             Logout
           </MenuItem>

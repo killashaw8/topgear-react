@@ -1,31 +1,31 @@
 import { createTheme } from '@mui/material/styles';
-import { common } from '@mui/material/colors';
 import shadow from './shadow';
 import typography from './typography';
-import { maxWidth } from '@mui/system';
 
 /**
  * LIGHT THEME (DEFAULT)
  */
 const light = {
 	palette: {
+		mode: 'dark' as const,
 		background: {
-			default: '#f8f8ff',
-			paper: common.white,
+			default: '#0B0B0C',
+			paper: '#161618',
 		},
 		primary: {
-			contrastText: '#ff9902',
-			main: '#010203',
+			contrastText: '#FFFFFF',
+			main: '#3B82F6',
 		},
 		secondary: {
-			contrastText: '#010203',
-			main: '#ff9902',
+			contrastText: '#FFFFFF',
+			main: '#2563EB',
 		},
 		text: {
-			primary: '#010203',
-			secondary: '#ff9902',
-			dark: common.black,
+			primary: '#FFFFFF',
+			secondary: '#A1A1AA',
+			disabled: '#52525B',
 		},
+		divider: '#27272A',
 	},
 	components: {
 		MuiContainer: {
@@ -38,7 +38,7 @@ const light = {
 		MuiCssBaseline: {
 			styleOverrides: {
 				html: { height: '100%' },
-				body: { background: '#f4f6f8', height: '100%', minHeight: '100%' },
+				body: { background: '#0B0B0C', color: '#FFFFFF', height: '100%', minHeight: '100%' },
 			},
 		},
 	},

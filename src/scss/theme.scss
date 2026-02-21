@@ -1,0 +1,25 @@
+@use "./tokens" as *;
+
+:root {
+  --accent: #{$accent};
+  --accent-hover: #{$accent-hover};
+  --accent-active: #{$accent-active};
+  --accent-soft: #{$accent-soft};
+
+  --bg: #{$bg};
+  --bg-2: #{$bg-2};
+  --surface: #{$surface};
+  --surface-2: #{$surface-2};
+
+  --border: #{$border};
+  --divider: #{$divider};
+
+  --text: #{$text};
+  --text-2: #{$text-2};
+  --text-muted: #{$text-muted};
+  --text-disabled: #{$text-disabled};
+
+  --success: #{$success};
+  --warning: #{$warning};
+  --error: #{$error};
+}

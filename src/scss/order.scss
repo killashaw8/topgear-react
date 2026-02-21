@@ -2,7 +2,7 @@
   position: relative;
   width: 100%;
   height: auto;
-  background: #ebb433;
+  background: var(--bg);
 
   .order-container {
     width: 100%;
@@ -65,7 +65,7 @@
 
     .title-dish {
       margin-left: 20px;
-      color: rgb(0, 0, 0);
+      color: var(--text);
       font-family: Commissioner;
       font-size: 22px;
       font-weight: 500;
@@ -126,8 +126,8 @@
       align-items: center;
       border-radius: 16px;
       box-shadow: none;
-      background: #ffffff;
-      border: 1px solid #000000;
+      background: var(--surface);
+      border: 1px solid var(--border);
     }
 
     .member-box {
@@ -148,7 +148,7 @@
         object-fit: cover;
         border-radius: 10%;
         box-shadow: none;
-        border: 1px solid #000000;
+        border: 1px solid var(--border);
       }
 
       .order-user-icon {
@@ -213,8 +213,8 @@
       flex-direction: column;
       border-radius: 16px;
       box-shadow: none;
-      background: #ffffff;
-      border: 1px solid #000000;
+      background: var(--surface);
+      border: 1px solid var(--border);
 
       .order-payment-info {
         width: 100%;

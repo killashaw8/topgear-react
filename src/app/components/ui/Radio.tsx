@@ -45,7 +45,8 @@ const StyledWrapper = styled.div`
     box-shadow:
       inset 1px 1px 4px rgba(255, 255, 255, 0.2),
       inset -1px -1px 6px rgba(0, 0, 0, 0.3),
-      0 4px 12px rgba(0, 0, 0, 0.15);
+      0 0 10px rgba(59, 130, 246, 0.28);
+    border: 1px solid var(--border);
     overflow: hidden;
     width: fit-content;
   }
@@ -65,14 +66,14 @@ const StyledWrapper = styled.div`
     cursor: pointer;
     font-weight: 600;
     letter-spacing: 0.3px;
-    color: #ebb433;
+    color: var(--text-2);
     position: relative;
     z-index: 2;
     transition: color 0.3s ease-in-out;
   }
 
   .glass-radio-group label:hover {
-    color: #010203;
+    color: var(--text);
   }
 
   .glass-radio-group input:checked + label {
@@ -95,19 +96,19 @@ const StyledWrapper = styled.div`
   ${'' /* These selectors assume fixed IDs. You may make them dynamic later */}
   #glass-createdAt:checked ~ .glass-glider {
     transform: translateX(0%);
-    background: linear-gradient(135deg, #ffd70055, #ffcc00);
-    box-shadow: 0 0 18px rgba(255, 215, 0, 0.5), 0 0 10px rgba(255, 235, 150, 0.4) inset;
+    background: linear-gradient(135deg, var(--accent-soft), var(--accent));
+    box-shadow: 0 0 18px rgba(59, 130, 246, 0.45), 0 0 10px rgba(96, 165, 250, 0.3) inset;
   }
 
   #glass-productPrice:checked ~ .glass-glider {
     transform: translateX(100%);
-    background: linear-gradient(135deg, #ffd70055, #ffcc00);
-    box-shadow: 0 0 18px rgba(255, 215, 0, 0.5), 0 0 10px rgba(255, 235, 150, 0.4) inset;
+    background: linear-gradient(135deg, var(--accent-soft), var(--accent));
+    box-shadow: 0 0 18px rgba(59, 130, 246, 0.45), 0 0 10px rgba(96, 165, 250, 0.3) inset;
   }
 
   #glass-productViews:checked ~ .glass-glider {
     transform: translateX(200%);
-    background: linear-gradient(135deg, #ffd70055, #ffcc00);
-    box-shadow: 0 0 18px rgba(255, 215, 0, 0.5), 0 0 10px rgba(255, 235, 150, 0.4) inset;
+    background: linear-gradient(135deg, var(--accent-soft), var(--accent));
+    box-shadow: 0 0 18px rgba(59, 130, 246, 0.45), 0 0 10px rgba(96, 165, 250, 0.3) inset;
   }
 `;
