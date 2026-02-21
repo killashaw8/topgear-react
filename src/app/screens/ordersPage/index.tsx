@@ -75,6 +75,18 @@ export default function OrdersPage() {
                   onChange={handleChange}
                   aria-label="basic tabs example"
                   className={"table-list"}
+                  sx={{
+                    "& .MuiTab-root": {
+                      color: "var(--text)",
+                      opacity: 0.9,
+                    },
+                    "& .MuiTab-root.Mui-selected": {
+                      color: "var(--accent)",
+                    },
+                    "& .MuiTabs-indicator": {
+                      backgroundColor: "var(--accent)",
+                    },
+                  }}
                 >
                   <Tab label="PAUSED ORDERS" value={"1"} />
                   <Tab label="PROCESS ORDERS" value={"2"} />

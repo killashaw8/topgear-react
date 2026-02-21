@@ -8,7 +8,6 @@ const Footers = styled.div`
   height: auto;
   padding-bottom: 40px;
   display: flex;
-  background: var(--bg-2);
   border-top: 1px solid var(--border);
   background-size: cover;
 

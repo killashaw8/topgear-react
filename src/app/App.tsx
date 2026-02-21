@@ -16,9 +16,11 @@ import { sweetErrorHandling, sweetTopSuccessAlert } from "../lib/sweetAlert";
 import { Messages } from "../lib/config";
 import { T } from "../lib/types/common";
 import AuthenticationModal from "./components/auth";
+import StarsBackground from "./components/StarsBackground";
 import "../scss/app.scss";
 import "../scss/navbar.scss"
 import "../scss/footer.scss"
+import "../scss/starsBackground.scss";
 
 
 
@@ -67,29 +69,32 @@ function App() {
 
   return (
     <>
-      {location.pathname === "/" ? (
-        <HomeNavbar {...sharedNavbarProps} />
-      ) : (
-        <OtherNavbar {...sharedNavbarProps} />
-        )}
-      {/* A <Switch> looks through its children <Route>s and
-          renders the first one that matches the current URL.
-          Always place the root (/) at the end! Otherwise it will freeze at the homepage
-          */}
-      <Routes>
-        <Route path="/products/*" element={<ProductsPage onAdd={onAdd} />} />
-        <Route path="/orders" element={<OrdersPage />} />
-        <Route path="/member-page" element={<UserPage />} />
-        <Route path="/users/:memberId" element={<PublicUserPage />} />
-        <Route path="/help" element={<HelpPage />} />
-        <Route path="/" element={<HomePage openSignup={() => setAuthMode("signup")} />} />
-      </Routes>
-      <Footer />
+      <StarsBackground />
+      <div className="app-shell">
+        {location.pathname === "/" ? (
+          <HomeNavbar {...sharedNavbarProps} />
+        ) : (
+          <OtherNavbar {...sharedNavbarProps} />
+          )}
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL.
+            Always place the root (/) at the end! Otherwise it will freeze at the homepage
+            */}
+        <Routes>
+          <Route path="/products/*" element={<ProductsPage onAdd={onAdd} />} />
+          <Route path="/orders" element={<OrdersPage />} />
+          <Route path="/member-page" element={<UserPage />} />
+          <Route path="/users/:memberId" element={<PublicUserPage />} />
+          <Route path="/help" element={<HelpPage />} />
+          <Route path="/" element={<HomePage openSignup={() => setAuthMode("signup")} />} />
+        </Routes>
+        <Footer />
 
-      <AuthenticationModal
-        authMode={authMode}
-        handleClose={handleAuthClose}
-      />
+        <AuthenticationModal
+          authMode={authMode}
+          handleClose={handleAuthClose}
+        />
+      </div>
     </>
   );
 }

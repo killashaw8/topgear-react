@@ -89,6 +89,10 @@ export default function Basket(props: BasketProps) {
           elevation: 0,
           sx: {
             overflow: "visible",
+            bgcolor: "var(--surface)",
+            color: "var(--text)",
+            border: "1px solid var(--accent)",
+            borderRadius: "12px",
             filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
             mt: 1.5,
             "& .MuiAvatar-root": {
@@ -105,7 +109,9 @@ export default function Basket(props: BasketProps) {
               right: 14,
               width: 10,
               height: 10,
-              bgcolor: "background.paper",
+              bgcolor: "var(--surface)",
+              borderTop: "1px solid var(--accent)",
+              borderLeft: "1px solid var(--accent)",
               transform: "translateY(-50%) rotate(45deg)",
               zIndex: 0,
             },

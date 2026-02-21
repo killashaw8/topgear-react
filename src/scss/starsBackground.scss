@@ -1,0 +1,65 @@
+.stars-bg {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at bottom, #10213d 0%, #0b0f1f 45%, #090a0f 100%);
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.app-shell {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+}
+
+/* Let stars show through app wrappers while keeping media sections intact */
+.app-shell .homepage,
+.app-shell .popular-dishes-frame,
+.app-shell .trend-products-frame,
+.app-shell .active-users-frame,
+.app-shell .products-page,
+.app-shell .order-page,
+.app-shell .user-page,
+.app-shell .help-page {
+  background: transparent !important;
+}
+
+.stars-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: transparent;
+  animation: animStar 50s linear infinite;
+}
+
+.stars-layer--small {
+  width: 1px;
+  height: 1px;
+  animation-duration: 50s;
+}
+
+.stars-layer--medium {
+  width: 2px;
+  height: 2px;
+  animation-duration: 100s;
+}
+
+.stars-layer--large {
+  width: 3px;
+  height: 3px;
+  animation-duration: 150s;
+}
+
+.stars-layer--clone {
+  top: 3000px;
+}
+
+@keyframes animStar {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-3000px);
+  }
+}

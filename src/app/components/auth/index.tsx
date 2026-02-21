@@ -134,18 +134,66 @@ export default function AuthenticationModal(props: AuthenticationModalProps) {
                 Fill in your details to register
               </p>
               <TextField
-                sx={{ mt: 1 }}
+                sx={{
+                  mt: 1,
+                  "& .MuiInputBase-input": {
+                    color: "var(--text)",
+                    "&::placeholder": {
+                      color: "var(--text)",
+                      opacity: 1,
+                    },
+                  },
+                  "& .MuiOutlinedInput-root": {
+                    "& fieldset": { borderColor: "var(--accent)" },
+                    "&:hover fieldset": { borderColor: "var(--accent-hover)" },
+                    "&.Mui-focused fieldset": { borderColor: "var(--accent)" },
+                  },
+                  "& .MuiInputLabel-root": { color: "var(--text-2)" },
+                  "& .MuiInputLabel-root.Mui-focused": { color: "var(--accent)" },
+                }}
                 label="Username"
                 variant="outlined"
                 onChange={handleUsername}
               />
               <TextField
-                sx={{ my: 2 }}
+                sx={{
+                  my: 2,
+                  "& .MuiInputBase-input": {
+                    color: "var(--text)",
+                    "&::placeholder": {
+                      color: "var(--text)",
+                      opacity: 1,
+                    },
+                  },
+                  "& .MuiOutlinedInput-root": {
+                    "& fieldset": { borderColor: "var(--accent)" },
+                    "&:hover fieldset": { borderColor: "var(--accent-hover)" },
+                    "&.Mui-focused fieldset": { borderColor: "var(--accent)" },
+                  },
+                  "& .MuiInputLabel-root": { color: "var(--text-2)" },
+                  "& .MuiInputLabel-root.Mui-focused": { color: "var(--accent)" },
+                }}
                 label="Phone Number"
                 variant="outlined"
                 onChange={handlePhone}
               />
               <TextField
+                sx={{
+                  "& .MuiInputBase-input": {
+                    color: "var(--text)",
+                    "&::placeholder": {
+                      color: "var(--text)",
+                      opacity: 1,
+                    },
+                  },
+                  "& .MuiOutlinedInput-root": {
+                    "& fieldset": { borderColor: "var(--accent)" },
+                    "&:hover fieldset": { borderColor: "var(--accent-hover)" },
+                    "&.Mui-focused fieldset": { borderColor: "var(--accent)" },
+                  },
+                  "& .MuiInputLabel-root": { color: "var(--text-2)" },
+                  "& .MuiInputLabel-root.Mui-focused": { color: "var(--accent)" },
+                }}
                 label="Password"
                 variant="outlined"
                 type="password"
@@ -192,13 +240,45 @@ export default function AuthenticationModal(props: AuthenticationModalProps) {
               <TextField
                 label="Username"
                 variant="outlined"
-                sx={{ my: 1 }}
+                sx={{
+                  my: 1,
+                  "& .MuiInputBase-input": {
+                    color: "var(--text)",
+                    "&::placeholder": {
+                      color: "var(--text)",
+                      opacity: 1,
+                    },
+                  },
+                  "& .MuiOutlinedInput-root": {
+                    "& fieldset": { borderColor: "var(--accent)" },
+                    "&:hover fieldset": { borderColor: "var(--accent-hover)" },
+                    "&.Mui-focused fieldset": { borderColor: "var(--accent)" },
+                  },
+                  "& .MuiInputLabel-root": { color: "var(--text-2)" },
+                  "& .MuiInputLabel-root.Mui-focused": { color: "var(--accent)" },
+                }}
                 onChange={handleUsername}
               />
               <TextField
                 label="Password"
                 variant="outlined"
                 type="password"
+                sx={{
+                  "& .MuiInputBase-input": {
+                    color: "var(--text)",
+                    "&::placeholder": {
+                      color: "var(--text)",
+                      opacity: 1,
+                    },
+                  },
+                  "& .MuiOutlinedInput-root": {
+                    "& fieldset": { borderColor: "var(--accent)" },
+                    "&:hover fieldset": { borderColor: "var(--accent-hover)" },
+                    "&.Mui-focused fieldset": { borderColor: "var(--accent)" },
+                  },
+                  "& .MuiInputLabel-root": { color: "var(--text-2)" },
+                  "& .MuiInputLabel-root.Mui-focused": { color: "var(--accent)" },
+                }}
                 onChange={handlePassword}
                 onKeyDown={handlePasswordKeyDown}
               />

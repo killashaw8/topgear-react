@@ -98,10 +98,22 @@ export default function ChosenProduct(props: ChosenProductProps) {
             <span className={"resto-name"}>{showroom?.memberNick}</span>
             <span className={"resto-name"}>{showroom?.memberPhone}</span>
             <Box className={"rating-box"}>
-              <Rating name="half-rating" defaultValue={2.5} precision={0.5} />
+              <Rating
+                name="half-rating"
+                defaultValue={2.5}
+                precision={0.5}
+                sx={{
+                  "& .MuiRating-iconFilled": {
+                    color: "var(--accent)",
+                  },
+                  "& .MuiRating-iconEmpty": {
+                    color: "var(--divider)",
+                  },
+                }}
+              />
               <div className={"evaluation-box"}>
                 <div className={"product-view"}>
-                  <RemoveRedEyeIcon sx={{ mr: "10px" }} />
+                  <RemoveRedEyeIcon sx={{ mr: "10px", color: "var(--text)" }} />
                   <span>{chosenProduct?.productViews}</span>
                 </div>
               </div>

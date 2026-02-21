@@ -10,8 +10,28 @@
   display: flex;
   background: url("/img/banner.png");
   background-size: cover;
+  position: relative;
+  isolation: isolate;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.28;
+    background-image:
+      radial-gradient(circle, rgba(59, 130, 246, 0.8) 0.8px, transparent 1.2px),
+      radial-gradient(circle, rgba(96, 165, 250, 0.7) 1px, transparent 1.6px),
+      radial-gradient(circle, rgba(37, 99, 235, 0.65) 0.7px, transparent 1.1px);
+    background-size: 180px 180px, 260px 260px, 320px 320px;
+    background-position: 0 0, 40px 80px, 120px 30px;
+    animation: header-star-drift 45s linear infinite;
+  }
 
     .header-container {
+    position: relative;
+    z-index: 2;
     
     height: 642px;
     
@@ -82,6 +102,15 @@
   }
 }  
 
+@keyframes header-star-drift {
+  from {
+    background-position: 0 0, 40px 80px, 120px 30px;
+  }
+  to {
+    background-position: 0 -220px, 40px -300px, 120px -380px;
+  }
+}
+
 /* POPULAR CARS */
 
   .popular-dishes-frame {
@@ -121,7 +150,14 @@
       width: 630px;
       margin-right: 7px;
       cursor: pointer;
-      border: 1px solid var(--border);
+      border: 1px solid var(--accent);
+      box-shadow: 0 0 10px rgba(59, 130, 246, 0.28);
+      transition: border-color 180ms ease, box-shadow 180ms ease;
+
+      &:hover {
+        border-color: var(--accent-hover);
+        box-shadow: 0 0 16px rgba(59, 130, 246, 0.5);
+      }
 
       .card-cover {
         background: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0) 200px), linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0) 300px);
@@ -183,7 +219,14 @@
       width: 630px;
       margin-right: 7px;
       cursor: pointer;
-      border: 1px solid var(--border);
+      border: 1px solid var(--accent);
+      box-shadow: 0 0 10px rgba(59, 130, 246, 0.28);
+      transition: border-color 180ms ease, box-shadow 180ms ease;
+
+      &:hover {
+        border-color: var(--accent-hover);
+        box-shadow: 0 0 16px rgba(59, 130, 246, 0.5);
+      }
 
       .card-cover {
         background: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0) 200px), linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0) 300px);
@@ -221,7 +264,9 @@
       width: 100%;
       background: #0c0e12;
       display: flex;
-      box-shadow: 0px -8px 90px rgba(59, 130, 246, 0.55);
+      box-shadow:
+        0px -12px 90px rgba(59, 130, 246, 0.55),
+        0px 12px 90px rgba(59, 130, 246, 0.45);
       transform: scale(1.5);
       overflow: hidden;
     }
@@ -261,7 +306,14 @@
         height: 305px;
         width: 273px;
         cursor: pointer;
-        border: 1px solid var(--border);
+        border: 1px solid var(--accent);
+        box-shadow: 0 0 10px rgba(59, 130, 246, 0.28);
+        transition: border-color 180ms ease, box-shadow 180ms ease;
+
+        &:hover {
+          border-color: var(--accent-hover);
+          box-shadow: 0 0 16px rgba(59, 130, 246, 0.5);
+        }
 
       }
     }
@@ -287,6 +339,11 @@
       .title {
         width: 65px;
         font-weight: 500;
+        color: var(--text) !important;
+      }
+
+      .MuiTypography-root {
+        color: var(--text) !important;
       }
     }
 
@@ -564,6 +621,11 @@
       .user-detail {
         width: 100%;
         margin-top: 10px;
+
+        .title,
+        .MuiTypography-root {
+          color: var(--text) !important;
+        }
       }
     }
 

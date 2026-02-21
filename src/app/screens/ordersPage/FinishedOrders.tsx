@@ -39,29 +39,16 @@ export default function FinishedOrders() {
                         src={imagePath}
                         className={"order-dish-img"}
                       />
-                      <p className={"title-dish"}>{product.productName}</p>
-                      <Box className={"orders-calc"}>
-                        <p>$11</p>
-                        <img src={"/icons/close.svg"} />
-                        <p>2</p>
-                        <img src={"/icons/pause.svg"} />
-                        <p style={{marginLeft: "15px"}}>
-                          ${item.itemQuantity * item.itemPrice}
-                        </p>
+                      <Box className={"order-item-details"}>
+                        <p className={"title-dish"}>{product.productName}</p>
+                        <p><span>Price:</span> <span>${item.itemPrice}</span></p>
+                        <p><span>Quantity:</span> <span>{item.itemQuantity}</span></p>
+                        <p><span>Delivery:</span> <span>${order.orderDelivery}</span></p>
+                        <p><span>Total:</span> <span>${order.orderTotal}</span></p>
                       </Box>
                     </Box>
                   );
                 })}
-                 <Box className={"orders-total "}>
-                    <p>Product price</p>
-                    <p>${order.orderTotal - order.orderDelivery}</p>
-                    <img src={"/icons/plus.svg"} />
-                    <p>Delivery cost</p>
-                    <p>${order.orderDelivery}</p>
-                    <img src={"/icons/pause.svg"} />
-                    <p>Total</p>
-                    <p>${order.orderTotal} </p>
-                  </Box>
               </Box>
             </Box>
           )
